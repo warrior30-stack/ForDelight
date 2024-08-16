@@ -1,0 +1,318 @@
+/* Loading overlay styles */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Make sure it's above all other content */
+    cursor: pointer; /* Show a pointer cursor */
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Text inside the overlay */
+#overlay-text {
+    position: absolute;
+    color: #3498db;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* Main content hidden initially */
+#main-content {
+    display: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:  url('images\ \(2\).jpeg') center center;
+}
+
+.teddy {
+    font-size: calc(50vmin / 260);
+    position: relative;
+    width: 260em;
+    height: 330em;
+}
+
+.teddy div {
+    position: absolute;
+}
+
+.right-ear, .left-ear, .head, .right-eye, .left-eye, .mouth-area, .nose, .nose-inner, .right-cheek, .left-cheek, .body, .paw, .foot {
+    border-radius: 50%;
+}
+
+.right-ear, .left-ear {
+    background: rgb(95,60,30);
+    box-shadow: 0 0 0 20em rgb(190,120,60) inset;
+    width: 80em;
+    height: 80em;
+}
+
+.right-ear {
+    left: 30em;
+}
+
+.left-ear {
+    right: 30em;
+}
+
+.head {
+    background: rgb(190,120,60);
+    width: 160em;
+    height: 160em;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 1;
+}
+
+.right-eye, .left-eye, .nose-inner {
+    background: rgb(255, 255, 255);
+}
+
+.right-eye, .left-eye {
+    box-shadow: 2em -2em 0 8em inset;
+    top: 65em;
+    width: 20em;
+    height: 20em;
+}
+
+.right-eye {
+    left: 45em;
+}
+
+.left-eye {
+    right: 45em;
+}
+
+.mouth-area {
+    background: rgb(230,160,90);
+    right: 0;
+    bottom: 5em;
+    left: 0;
+    margin: auto;
+    width: 100em;
+    height: 70em;
+}
+
+.nose {
+    background: rgb(0,0,0);
+    top: 15em;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 40em;
+    height: 30em;
+}
+
+.nose-inner {
+    top: 3em;
+    right: 8em;
+    width: 10em;
+    height: 8em;
+}
+
+.right-cheek, .left-cheek {
+    bottom: 10em;
+    width: 30em;
+    height: 30em;
+}
+
+.right-cheek {
+    box-shadow: -2em -2em 0 0 rgb(115,80,45) inset;
+    left: 20em;
+}
+
+.left-cheek {
+    box-shadow: 2em -2em 0 0 rgb(115,80,45) inset;
+    right: 20em;
+}
+
+.body {
+    background: rgb(230,160,90);
+    box-shadow: 0 0 0 24em rgb(190,120,60) inset;
+    margin: auto;
+    right: 0;
+    bottom: 22em;
+    left: 0;
+    width: 170em;
+    height: 190em;
+}
+.heart-container {
+    position: absolute;
+    top: 40%; /* Adjust positioning if needed */
+    left: 40%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+:root {
+    --heart-color-1: #ff4d6d;
+    --heart-color-2: #ff6f61;
+    --heart-color-3: #ff9a8b;
+    --heart-color-4: #ffb3ab;
+}
+
+.heart {
+    position: relative;
+    width: 8vw; /* Smaller size */
+    height: 8vw; /* Smaller size */
+    background-color: var(--heart-color-1);
+    transform: rotate(-45deg);
+    box-shadow: 0 0 30px rgba(255, 77, 109, 0.8), 0 0 60px rgba(255, 77, 109, 0.6), 0 0 90px rgba(255, 77, 109, 0.4);
+    animation: pulse 2s infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--heart-color-1);
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -50%;
+    left: 0;
+}
+
+.heart:after {
+    left: 50%;
+    top: 0;
+}
+
+
+.heart-text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size:2vw; /* Smaller font size */
+    text-align: center;
+    font-weight: bold;
+    z-index: 4;
+}
+
+.image-circle {
+    position: absolute;
+    bottom: 20%;
+    left: 100%;
+    transform: translate(-50%, 0);
+    width: 4vw; /* Smaller size */
+    height:4vw; /* Smaller size */
+    background: url('delight.jpg') no-repeat center center;
+    background-size: cover;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: rotate(-45deg) scale(1);
+        box-shadow: 0 0 30px rgba(255, 77, 109, 0.8), 0 0 60px rgba(255, 77, 109, 0.6), 0 0 90px rgba(255, 77, 109, 0.4);
+    }
+    50% {
+        transform: rotate(-45deg) scale(1.1);
+        box-shadow: 0 0 50px rgba(255, 77, 109, 1), 0 0 100px rgba(255, 77, 109, 0.8), 0 0 150px rgba(255, 77, 109, 0.6);
+    }
+}
+
+.heart {
+    box-shadow: 0 0 30px rgba(255, 77, 109, 0.8), 0 0 60px rgba(255, 77, 109, 0.6), 0 0 90px rgba(255, 77, 109, 0.4);
+    animation: pulse 2s infinite;
+}
+.right-arm, .left-arm {
+    background: rgb(170,100,50);
+    top: 130em;
+    width: 70em;
+    height: 60em;
+}
+
+.right-arm {
+    border-radius: 70em 0 0 0 / 60em 0 0 0;
+    left: 0;
+}
+
+.right-arm .arm-inner {
+    border-radius: 50em 0 0 0 / 80em 0 0 0;
+    box-shadow: 22em 22em 0 0 rgb(170,100,50) inset;
+    left: 55em;
+}
+
+.left-arm, .left-arm .paw {
+    right: 0;
+}
+
+.left-arm {
+    border-radius: 0 70em 0 0 / 0 60em 0 0;
+}
+
+.left-arm .arm-inner {
+    border-radius: 0 50em 0 0 / 0 80em 0 0;
+    box-shadow: -22em 22em 0 0 rgb(170,100,50) inset;
+    right: 55em;
+}
+
+.arm-inner {
+    width: 50em;
+    height: 80em;
+    bottom: 0;
+}
+
+.paw {
+    background: rgb(190,120,60);
+    width: 80em;
+    height: 60em;
+    top: 30em;
+}
+
+.right-leg, .left-leg {
+    background: rgb(170,100,50);
+    border-radius: 45em 45em 0 0 / 70em 70em 0 0;
+    bottom: 40em;
+    width: 90em;
+    height: 70em;
+}
+
+.right-leg {
+    left: 10em;
+}
+
+.left-leg {
+    right: 10em;
+}
+
+.foot {
+    background: rgb(230,160,90);
+    box-shadow: 0 5em 0 10em rgb(190,120,60) inset;
+    width: 100%;
+    height: 80em;
+    top: 30em;
+}
